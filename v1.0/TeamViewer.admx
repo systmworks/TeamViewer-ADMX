@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ================================================================= -->
+<!--                                                                   -->
+<!--    TeamViewer Host — Custom ADMX Template                         -->
+<!--    Created by Darren Milne                                        -->
+<!--                                                                   -->
+<!--    TeamViewer does not provide an official ADMX template.         -->
+<!--    This template maps vendor-documented and community-confirmed   -->
+<!--    registry values to Group Policy settings.                      -->
+<!--                                                                   -->
+<!--    Supports both x64 and x86 (WOW6432Node) TeamViewer installs   -->
+<!--    on 64-bit Windows 10/11.                                       -->
+<!--                                                                   -->
+<!--    Registry reference: Documentation/TeamViewer_Registry_Reference.md -->
+<!--                                                                   -->
+<!--    License: CC BY-SA 4.0                                          -->
+<!--                                                                   -->
+<!-- ================================================================= -->
+
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0"
+  xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="TeamViewer" namespace="TeamViewer.Policies.TeamViewerHost" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition displayName="$(string.SupportedTeamViewer)" name="SupportedTeamViewer"/>
+    </definitions>
+  </supportedOn>
+
+  <categories>
+    <category displayName="$(string.TeamViewerCategory)" name="TeamViewerCategory"/>
+
+    <!-- Architecture subcategories -->
+    <category displayName="$(string.Cat_x64)" name="TeamViewerX64Category">
+      <parentCategory ref="TeamViewerCategory"/>
+    </category>
+    <category displayName="$(string.Cat_x86)" name="TeamViewerX86Category">
+      <parentCategory ref="TeamViewerCategory"/>
+    </category>
+
+    <!-- x64 functional categories -->
+    <category displayName="$(string.Cat_Security)" name="SecurityCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_Updates)" name="UpdatesCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_AccessControlIncoming)" name="AccessControlIncomingCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_AccessControlOutgoing)" name="AccessControlOutgoingCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_Network)" name="NetworkCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_Logging)" name="LoggingCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+    <category displayName="$(string.Cat_Features)" name="FeaturesCategory_x64">
+      <parentCategory ref="TeamViewerX64Category"/>
+    </category>
+
+    <!-- x86 functional categories -->
+    <category displayName="$(string.Cat_Security)" name="SecurityCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_Updates)" name="UpdatesCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_AccessControlIncoming)" name="AccessControlIncomingCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_AccessControlOutgoing)" name="AccessControlOutgoingCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_Network)" name="NetworkCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_Logging)" name="LoggingCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+    <category displayName="$(string.Cat_Features)" name="FeaturesCategory_x86">
+      <parentCategory ref="TeamViewerX86Category"/>
+    </category>
+  </categories>
+
+  <policies>
+
+    <!-- ======================================== -->
+    <!--                                          -->
+    <!--    TeamViewer Host (x64) - policies      -->
+    <!--                                          -->
+    <!-- ======================================== -->
+
+    <!-- ======================================== -->
+    <!--               Security                   -->
+    <!-- ======================================== -->
+
+    <!-- Security > Require Admin Rights for Changes -->
+    <policy class="Machine" displayName="$(string.Security_Adminrights)" explainText="$(string.Security_Adminrights_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Security_Adminrights_x64" valueName="Security_Adminrights">
+      <parentCategory ref="SecurityCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security > Random Password Strength -->
+    <policy class="Machine" displayName="$(string.Security_PasswordStrength)" explainText="$(string.Security_PasswordStrength_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Security_PasswordStrength_x64" valueName="Security_PasswordStrength" presentation="$(presentation.Security_PasswordStrength_enum_x64)">
+      <parentCategory ref="SecurityCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Security_PasswordStrength_enum_x64" valueName="Security_PasswordStrength">
+          <item displayName="$(string.Security_PasswordStrength_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Security > Windows Logon Authentication -->
+    <policy class="Machine" displayName="$(string.Security_WinLogin)" explainText="$(string.Security_WinLogin_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Security_WinLogin_x64" valueName="Security_WinLogin" presentation="$(presentation.Security_WinLogin_enum_x64)">
+      <parentCategory ref="SecurityCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Security_WinLogin_enum_x64" valueName="Security_WinLogin">
+          <item displayName="$(string.Security_WinLogin_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.Security_WinLogin_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Security_WinLogin_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Security > Accept Incoming Connections -->
+    <policy class="Machine" displayName="$(string.Security_AcceptIncoming)" explainText="$(string.Security_AcceptIncoming_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Security_AcceptIncoming_x64" valueName="Security_AcceptIncoming">
+      <parentCategory ref="SecurityCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security > Prevent Remote Shutdown -->
+    <policy class="Machine" displayName="$(string.Security_Disableshutdown)" explainText="$(string.Security_Disableshutdown_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Security_Disableshutdown_x64" valueName="Security_Disableshutdown">
+      <parentCategory ref="SecurityCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--            Update Control                -->
+    <!-- ======================================== -->
+
+    <!-- Updates > Auto-Update Mode -->
+    <policy class="Machine" displayName="$(string.AutoUpdateMode)" explainText="$(string.AutoUpdateMode_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="AutoUpdateMode_x64" valueName="AutoUpdateMode" presentation="$(presentation.AutoUpdateMode_enum_x64)">
+      <parentCategory ref="UpdatesCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AutoUpdateMode_enum_x64" valueName="AutoUpdateMode">
+          <item displayName="$(string.AutoUpdateMode_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Updates > Update Check Interval -->
+    <policy class="Machine" displayName="$(string.UpdateCheckInterval)" explainText="$(string.UpdateCheckInterval_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="UpdateCheckInterval_x64" valueName="UpdateCheckInterval" presentation="$(presentation.UpdateCheckInterval_enum_x64)">
+      <parentCategory ref="UpdatesCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="UpdateCheckInterval_enum_x64" valueName="UpdateCheckInterval">
+          <item displayName="$(string.UpdateCheckInterval_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--   Access Control (Incoming / Server)     -->
+    <!-- ======================================== -->
+
+    <!-- Access Control (Incoming) > Incoming Access Control Mode -->
+    <policy class="Machine" displayName="$(string.AC_Server_AccessControlType)" explainText="$(string.AC_Server_AccessControlType_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_AccessControlType_x64" valueName="AC_Server_AccessControlType" presentation="$(presentation.AC_Server_AccessControlType_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AccessControlType_enum_x64" valueName="AC_Server_AccessControlType">
+          <item displayName="$(string.AC_AccessControlType_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Partner to View Desktop -->
+    <policy class="Machine" displayName="$(string.AC_Server_AllowPartnerViewDesktop)" explainText="$(string.AC_Server_AllowPartnerViewDesktop_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_AllowPartnerViewDesktop_x64" valueName="AC_Server_Custom_AllowPartnerViewDesktop" presentation="$(presentation.AC_Server_AllowPartnerViewDesktop_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AllowPartnerViewDesktop_enum_x64" valueName="AC_Server_Custom_AllowPartnerViewDesktop">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Remote Control -->
+    <policy class="Machine" displayName="$(string.AC_Server_RemoteControl)" explainText="$(string.AC_Server_RemoteControl_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_RemoteControl_x64" valueName="AC_Server_Custom_RemoteControlAccess" presentation="$(presentation.AC_Server_RemoteControl_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_RemoteControl_enum_x64" valueName="AC_Server_Custom_RemoteControlAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow File Transfer -->
+    <policy class="Machine" displayName="$(string.AC_Server_FileTransfer)" explainText="$(string.AC_Server_FileTransfer_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_FileTransfer_x64" valueName="AC_Server_Custom_FileTransferAccess" presentation="$(presentation.AC_Server_FileTransfer_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_FileTransfer_enum_x64" valueName="AC_Server_Custom_FileTransferAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow VPN Connections -->
+    <policy class="Machine" displayName="$(string.AC_Server_AllowVPN)" explainText="$(string.AC_Server_AllowVPN_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_AllowVPN_x64" valueName="AC_Server_Custom_AllowVPN" presentation="$(presentation.AC_Server_AllowVPN_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AllowVPN_enum_x64" valueName="AC_Server_Custom_AllowVPN">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Disable Remote Input -->
+    <policy class="Machine" displayName="$(string.AC_Server_DisableRemoteInput)" explainText="$(string.AC_Server_DisableRemoteInput_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_DisableRemoteInput_x64" valueName="AC_Server_Custom_DisableRemoteImput">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Printing to Remote Printers -->
+    <policy class="Machine" displayName="$(string.AC_Server_PrintRemote)" explainText="$(string.AC_Server_PrintRemote_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_PrintRemote_x64" valueName="AC_Server_Custom_AllowToPrintOnRemotePrinters" presentation="$(presentation.AC_Server_PrintRemote_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_PrintRemote_enum_x64" valueName="AC_Server_Custom_AllowToPrintOnRemotePrinters">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Printing to Local Printers -->
+    <policy class="Machine" displayName="$(string.AC_Server_PrintLocal)" explainText="$(string.AC_Server_PrintLocal_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Server_PrintLocal_x64" valueName="AC_Server_Custom_AllowToPrintOnMyPrinters" presentation="$(presentation.AC_Server_PrintLocal_enum_x64)">
+      <parentCategory ref="AccessControlIncomingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_PrintLocal_enum_x64" valueName="AC_Server_Custom_AllowToPrintOnMyPrinters">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--   Access Control (Outgoing / Client)     -->
+    <!-- ======================================== -->
+
+    <!-- Access Control (Outgoing) > Allow Outgoing Connections -->
+    <policy class="Machine" displayName="$(string.AC_AllowOutgoingConnections)" explainText="$(string.AC_AllowOutgoingConnections_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_AllowOutgoingConnections_x64" valueName="AC_AllowOutgoingConnections">
+      <parentCategory ref="AccessControlOutgoingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Outgoing Access Control Mode -->
+    <policy class="Machine" displayName="$(string.AC_Client_AccessControlType)" explainText="$(string.AC_Client_AccessControlType_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Client_AccessControlType_x64" valueName="AC_Client_AccessControlType" presentation="$(presentation.AC_Client_AccessControlType_enum_x64)">
+      <parentCategory ref="AccessControlOutgoingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_AccessControlType_enum_x64" valueName="AC_Client_AccessControlType">
+          <item displayName="$(string.AC_AccessControlType_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Allow File Transfer -->
+    <policy class="Machine" displayName="$(string.AC_Client_FileTransfer)" explainText="$(string.AC_Client_FileTransfer_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Client_FileTransfer_x64" valueName="AC_Client_Custom_FileTransferAccess" presentation="$(presentation.AC_Client_FileTransfer_enum_x64)">
+      <parentCategory ref="AccessControlOutgoingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_FileTransfer_enum_x64" valueName="AC_Client_Custom_FileTransferAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Allow Remote Control -->
+    <policy class="Machine" displayName="$(string.AC_Client_RemoteControl)" explainText="$(string.AC_Client_RemoteControl_Explain_x64)" key="SOFTWARE\TeamViewer\AccessControl"
+      name="AC_Client_RemoteControl_x64" valueName="AC_Client_Custom_RemoteControlAccess" presentation="$(presentation.AC_Client_RemoteControl_enum_x64)">
+      <parentCategory ref="AccessControlOutgoingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_RemoteControl_enum_x64" valueName="AC_Client_Custom_RemoteControlAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--          Network and Proxy               -->
+    <!-- ======================================== -->
+
+    <!-- Network > Enable Direct LAN Connections -->
+    <policy class="Machine" displayName="$(string.General_DirectLAN)" explainText="$(string.General_DirectLAN_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="General_DirectLAN_x64" valueName="General_DirectLAN">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Restrict to LAN Only -->
+    <policy class="Machine" displayName="$(string.LanOnly)" explainText="$(string.LanOnly_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="LanOnly_x64" valueName="LanOnly">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Proxy Mode -->
+    <policy class="Machine" displayName="$(string.Proxy_Type)" explainText="$(string.Proxy_Type_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Proxy_Type_x64" valueName="Proxy_Type" presentation="$(presentation.Proxy_Type_enum_x64)">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Proxy_Type_enum_x64" valueName="Proxy_Type">
+          <item displayName="$(string.Proxy_Type_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.Proxy_Type_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Proxy_Type_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Network > Proxy Server Address -->
+    <policy class="Machine" displayName="$(string.Proxy_IP)" explainText="$(string.Proxy_IP_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Proxy_IP_x64" presentation="$(presentation.Proxy_IP_text_x64)">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <text id="Proxy_IP_text_x64" valueName="Proxy_IP" maxLength="255" />
+      </elements>
+    </policy>
+
+    <!-- Network > Enable UPnP -->
+    <policy class="Machine" displayName="$(string.UPNP)" explainText="$(string.UPNP_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="UPNP_x64" valueName="UPNP">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Custom Router Address -->
+    <policy class="Machine" displayName="$(string.CustomRouter)" explainText="$(string.CustomRouter_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="CustomRouter_x64" presentation="$(presentation.CustomRouter_text_x64)">
+      <parentCategory ref="NetworkCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <text id="CustomRouter_text_x64" valueName="CustomRouter" maxLength="255" />
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--               Logging                    -->
+    <!-- ======================================== -->
+
+    <!-- Logging > Enable Logging -->
+    <policy class="Machine" displayName="$(string.Logging)" explainText="$(string.Logging_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="Logging_x64" valueName="Logging">
+      <parentCategory ref="LoggingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Logging > Log Incoming Connections -->
+    <policy class="Machine" displayName="$(string.LogIncomingConnections)" explainText="$(string.LogIncomingConnections_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="LogIncomingConnections_x64" valueName="LogIncomingConnections">
+      <parentCategory ref="LoggingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Logging > Log Outgoing Connections -->
+    <policy class="Machine" displayName="$(string.LogOutgoingConnections)" explainText="$(string.LogOutgoingConnections_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="LogOutgoingConnections_x64" valueName="LogOutgoingConnections">
+      <parentCategory ref="LoggingCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--               Features                   -->
+    <!-- ======================================== -->
+
+    <!-- Features > Full Access on Windows Login Screen -->
+    <policy class="Machine" displayName="$(string.ACFullAccessOnLoginScreen)" explainText="$(string.ACFullAccessOnLoginScreen_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="ACFullAccessOnLoginScreen_x64" valueName="ACFullAccessOnLoginScreen">
+      <parentCategory ref="FeaturesCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Features > Allow Chat to This Machine -->
+    <policy class="Machine" displayName="$(string.ChatToThisMachine)" explainText="$(string.ChatToThisMachine_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="ChatToThisMachine_x64" valueName="ChatToThisMachine">
+      <parentCategory ref="FeaturesCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Features > Enforce Allowlist Mode -->
+    <policy class="Machine" displayName="$(string.UseWhitelist)" explainText="$(string.UseWhitelist_Explain_x64)" key="SOFTWARE\TeamViewer"
+      name="UseWhitelist_x64" valueName="UseWhitelist">
+      <parentCategory ref="FeaturesCategory_x64"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--                                          -->
+    <!--    TeamViewer Host (x86) - policies      -->
+    <!--                                          -->
+    <!-- ======================================== -->
+
+    <!-- ======================================== -->
+    <!--               Security                   -->
+    <!-- ======================================== -->
+
+    <!-- Security > Require Admin Rights for Changes -->
+    <policy class="Machine" displayName="$(string.Security_Adminrights)" explainText="$(string.Security_Adminrights_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Security_Adminrights_x86" valueName="Security_Adminrights">
+      <parentCategory ref="SecurityCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security > Random Password Strength -->
+    <policy class="Machine" displayName="$(string.Security_PasswordStrength)" explainText="$(string.Security_PasswordStrength_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Security_PasswordStrength_x86" valueName="Security_PasswordStrength" presentation="$(presentation.Security_PasswordStrength_enum_x86)">
+      <parentCategory ref="SecurityCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Security_PasswordStrength_enum_x86" valueName="Security_PasswordStrength">
+          <item displayName="$(string.Security_PasswordStrength_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.Security_PasswordStrength_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Security > Windows Logon Authentication -->
+    <policy class="Machine" displayName="$(string.Security_WinLogin)" explainText="$(string.Security_WinLogin_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Security_WinLogin_x86" valueName="Security_WinLogin" presentation="$(presentation.Security_WinLogin_enum_x86)">
+      <parentCategory ref="SecurityCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Security_WinLogin_enum_x86" valueName="Security_WinLogin">
+          <item displayName="$(string.Security_WinLogin_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.Security_WinLogin_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Security_WinLogin_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Security > Accept Incoming Connections -->
+    <policy class="Machine" displayName="$(string.Security_AcceptIncoming)" explainText="$(string.Security_AcceptIncoming_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Security_AcceptIncoming_x86" valueName="Security_AcceptIncoming">
+      <parentCategory ref="SecurityCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Security > Prevent Remote Shutdown -->
+    <policy class="Machine" displayName="$(string.Security_Disableshutdown)" explainText="$(string.Security_Disableshutdown_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Security_Disableshutdown_x86" valueName="Security_Disableshutdown">
+      <parentCategory ref="SecurityCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--            Update Control                -->
+    <!-- ======================================== -->
+
+    <!-- Updates > Auto-Update Mode -->
+    <policy class="Machine" displayName="$(string.AutoUpdateMode)" explainText="$(string.AutoUpdateMode_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="AutoUpdateMode_x86" valueName="AutoUpdateMode" presentation="$(presentation.AutoUpdateMode_enum_x86)">
+      <parentCategory ref="UpdatesCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AutoUpdateMode_enum_x86" valueName="AutoUpdateMode">
+          <item displayName="$(string.AutoUpdateMode_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AutoUpdateMode_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Updates > Update Check Interval -->
+    <policy class="Machine" displayName="$(string.UpdateCheckInterval)" explainText="$(string.UpdateCheckInterval_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="UpdateCheckInterval_x86" valueName="UpdateCheckInterval" presentation="$(presentation.UpdateCheckInterval_enum_x86)">
+      <parentCategory ref="UpdatesCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="UpdateCheckInterval_enum_x86" valueName="UpdateCheckInterval">
+          <item displayName="$(string.UpdateCheckInterval_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.UpdateCheckInterval_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--   Access Control (Incoming / Server)     -->
+    <!-- ======================================== -->
+
+    <!-- Access Control (Incoming) > Incoming Access Control Mode -->
+    <policy class="Machine" displayName="$(string.AC_Server_AccessControlType)" explainText="$(string.AC_Server_AccessControlType_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_AccessControlType_x86" valueName="AC_Server_AccessControlType" presentation="$(presentation.AC_Server_AccessControlType_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AccessControlType_enum_x86" valueName="AC_Server_AccessControlType">
+          <item displayName="$(string.AC_AccessControlType_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Partner to View Desktop -->
+    <policy class="Machine" displayName="$(string.AC_Server_AllowPartnerViewDesktop)" explainText="$(string.AC_Server_AllowPartnerViewDesktop_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_AllowPartnerViewDesktop_x86" valueName="AC_Server_Custom_AllowPartnerViewDesktop" presentation="$(presentation.AC_Server_AllowPartnerViewDesktop_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AllowPartnerViewDesktop_enum_x86" valueName="AC_Server_Custom_AllowPartnerViewDesktop">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Remote Control -->
+    <policy class="Machine" displayName="$(string.AC_Server_RemoteControl)" explainText="$(string.AC_Server_RemoteControl_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_RemoteControl_x86" valueName="AC_Server_Custom_RemoteControlAccess" presentation="$(presentation.AC_Server_RemoteControl_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_RemoteControl_enum_x86" valueName="AC_Server_Custom_RemoteControlAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow File Transfer -->
+    <policy class="Machine" displayName="$(string.AC_Server_FileTransfer)" explainText="$(string.AC_Server_FileTransfer_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_FileTransfer_x86" valueName="AC_Server_Custom_FileTransferAccess" presentation="$(presentation.AC_Server_FileTransfer_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_FileTransfer_enum_x86" valueName="AC_Server_Custom_FileTransferAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow VPN Connections -->
+    <policy class="Machine" displayName="$(string.AC_Server_AllowVPN)" explainText="$(string.AC_Server_AllowVPN_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_AllowVPN_x86" valueName="AC_Server_Custom_AllowVPN" presentation="$(presentation.AC_Server_AllowVPN_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_AllowVPN_enum_x86" valueName="AC_Server_Custom_AllowVPN">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Disable Remote Input -->
+    <policy class="Machine" displayName="$(string.AC_Server_DisableRemoteInput)" explainText="$(string.AC_Server_DisableRemoteInput_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_DisableRemoteInput_x86" valueName="AC_Server_Custom_DisableRemoteImput">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Printing to Remote Printers -->
+    <policy class="Machine" displayName="$(string.AC_Server_PrintRemote)" explainText="$(string.AC_Server_PrintRemote_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_PrintRemote_x86" valueName="AC_Server_Custom_AllowToPrintOnRemotePrinters" presentation="$(presentation.AC_Server_PrintRemote_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_PrintRemote_enum_x86" valueName="AC_Server_Custom_AllowToPrintOnRemotePrinters">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Incoming) > Allow Printing to Local Printers -->
+    <policy class="Machine" displayName="$(string.AC_Server_PrintLocal)" explainText="$(string.AC_Server_PrintLocal_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Server_PrintLocal_x86" valueName="AC_Server_Custom_AllowToPrintOnMyPrinters" presentation="$(presentation.AC_Server_PrintLocal_enum_x86)">
+      <parentCategory ref="AccessControlIncomingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Server_PrintLocal_enum_x86" valueName="AC_Server_Custom_AllowToPrintOnMyPrinters">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--   Access Control (Outgoing / Client)     -->
+    <!-- ======================================== -->
+
+    <!-- Access Control (Outgoing) > Allow Outgoing Connections -->
+    <policy class="Machine" displayName="$(string.AC_AllowOutgoingConnections)" explainText="$(string.AC_AllowOutgoingConnections_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_AllowOutgoingConnections_x86" valueName="AC_AllowOutgoingConnections">
+      <parentCategory ref="AccessControlOutgoingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Outgoing Access Control Mode -->
+    <policy class="Machine" displayName="$(string.AC_Client_AccessControlType)" explainText="$(string.AC_Client_AccessControlType_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Client_AccessControlType_x86" valueName="AC_Client_AccessControlType" presentation="$(presentation.AC_Client_AccessControlType_enum_x86)">
+      <parentCategory ref="AccessControlOutgoingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_AccessControlType_enum_x86" valueName="AC_Client_AccessControlType">
+          <item displayName="$(string.AC_AccessControlType_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt3)">
+            <value><decimal value="3" /></value>
+          </item>
+          <item displayName="$(string.AC_AccessControlType_opt4)">
+            <value><decimal value="4" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Allow File Transfer -->
+    <policy class="Machine" displayName="$(string.AC_Client_FileTransfer)" explainText="$(string.AC_Client_FileTransfer_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Client_FileTransfer_x86" valueName="AC_Client_Custom_FileTransferAccess" presentation="$(presentation.AC_Client_FileTransfer_enum_x86)">
+      <parentCategory ref="AccessControlOutgoingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_FileTransfer_enum_x86" valueName="AC_Client_Custom_FileTransferAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Access Control (Outgoing) > Allow Remote Control -->
+    <policy class="Machine" displayName="$(string.AC_Client_RemoteControl)" explainText="$(string.AC_Client_RemoteControl_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer\AccessControl"
+      name="AC_Client_RemoteControl_x86" valueName="AC_Client_Custom_RemoteControlAccess" presentation="$(presentation.AC_Client_RemoteControl_enum_x86)">
+      <parentCategory ref="AccessControlOutgoingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="AC_Client_RemoteControl_enum_x86" valueName="AC_Client_Custom_RemoteControlAccess">
+          <item displayName="$(string.AC_Permission_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.AC_Permission_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--          Network and Proxy               -->
+    <!-- ======================================== -->
+
+    <!-- Network > Enable Direct LAN Connections -->
+    <policy class="Machine" displayName="$(string.General_DirectLAN)" explainText="$(string.General_DirectLAN_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="General_DirectLAN_x86" valueName="General_DirectLAN">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Restrict to LAN Only -->
+    <policy class="Machine" displayName="$(string.LanOnly)" explainText="$(string.LanOnly_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="LanOnly_x86" valueName="LanOnly">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Proxy Mode -->
+    <policy class="Machine" displayName="$(string.Proxy_Type)" explainText="$(string.Proxy_Type_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Proxy_Type_x86" valueName="Proxy_Type" presentation="$(presentation.Proxy_Type_enum_x86)">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <enum id="Proxy_Type_enum_x86" valueName="Proxy_Type">
+          <item displayName="$(string.Proxy_Type_opt0)">
+            <value><decimal value="0" /></value>
+          </item>
+          <item displayName="$(string.Proxy_Type_opt1)">
+            <value><decimal value="1" /></value>
+          </item>
+          <item displayName="$(string.Proxy_Type_opt2)">
+            <value><decimal value="2" /></value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+
+    <!-- Network > Proxy Server Address -->
+    <policy class="Machine" displayName="$(string.Proxy_IP)" explainText="$(string.Proxy_IP_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Proxy_IP_x86" presentation="$(presentation.Proxy_IP_text_x86)">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <text id="Proxy_IP_text_x86" valueName="Proxy_IP" maxLength="255" />
+      </elements>
+    </policy>
+
+    <!-- Network > Enable UPnP -->
+    <policy class="Machine" displayName="$(string.UPNP)" explainText="$(string.UPNP_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="UPNP_x86" valueName="UPNP">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Network > Custom Router Address -->
+    <policy class="Machine" displayName="$(string.CustomRouter)" explainText="$(string.CustomRouter_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="CustomRouter_x86" presentation="$(presentation.CustomRouter_text_x86)">
+      <parentCategory ref="NetworkCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <elements>
+        <text id="CustomRouter_text_x86" valueName="CustomRouter" maxLength="255" />
+      </elements>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--               Logging                    -->
+    <!-- ======================================== -->
+
+    <!-- Logging > Enable Logging -->
+    <policy class="Machine" displayName="$(string.Logging)" explainText="$(string.Logging_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="Logging_x86" valueName="Logging">
+      <parentCategory ref="LoggingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Logging > Log Incoming Connections -->
+    <policy class="Machine" displayName="$(string.LogIncomingConnections)" explainText="$(string.LogIncomingConnections_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="LogIncomingConnections_x86" valueName="LogIncomingConnections">
+      <parentCategory ref="LoggingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Logging > Log Outgoing Connections -->
+    <policy class="Machine" displayName="$(string.LogOutgoingConnections)" explainText="$(string.LogOutgoingConnections_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="LogOutgoingConnections_x86" valueName="LogOutgoingConnections">
+      <parentCategory ref="LoggingCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- ======================================== -->
+    <!--               Features                   -->
+    <!-- ======================================== -->
+
+    <!-- Features > Full Access on Windows Login Screen -->
+    <policy class="Machine" displayName="$(string.ACFullAccessOnLoginScreen)" explainText="$(string.ACFullAccessOnLoginScreen_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="ACFullAccessOnLoginScreen_x86" valueName="ACFullAccessOnLoginScreen">
+      <parentCategory ref="FeaturesCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Features > Allow Chat to This Machine -->
+    <policy class="Machine" displayName="$(string.ChatToThisMachine)" explainText="$(string.ChatToThisMachine_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="ChatToThisMachine_x86" valueName="ChatToThisMachine">
+      <parentCategory ref="FeaturesCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+    <!-- Features > Enforce Allowlist Mode -->
+    <policy class="Machine" displayName="$(string.UseWhitelist)" explainText="$(string.UseWhitelist_Explain_x86)" key="SOFTWARE\WOW6432Node\TeamViewer"
+      name="UseWhitelist_x86" valueName="UseWhitelist">
+      <parentCategory ref="FeaturesCategory_x86"/>
+      <supportedOn ref="SupportedTeamViewer"/>
+      <enabledValue>
+        <decimal value="1" />
+      </enabledValue>
+      <disabledValue>
+        <decimal value="0" />
+      </disabledValue>
+    </policy>
+
+  </policies>
+</policyDefinitions>
