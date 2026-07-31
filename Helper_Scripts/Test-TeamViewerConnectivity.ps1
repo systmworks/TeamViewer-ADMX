@@ -140,18 +140,19 @@ function Get-LogHighlights {
     return @($lines | Select-Object -Last 30)
 }
 
+Clear-Host
 Write-Host '=== TeamViewer Connectivity Diagnostic (read-only) ===' -ForegroundColor Cyan
 
 # Port tests
 $portResults = [System.Collections.Generic.List[object]]::new()
 if (-not $SkipPortTests) {
     Write-Host "`n--- TCP port tests ---" -ForegroundColor Yellow
-    foreach ($host in $RouterHosts) {
+    foreach ($routerHost in $RouterHosts) {
         foreach ($port in $TcpPorts) {
-            $r = Test-TcpPort -ComputerName $host -Port $port
+            $r = Test-TcpPort -ComputerName $routerHost -Port $port
             $portResults.Add($r)
             $color = if ($r.Result -eq 'Open') { 'Green' } else { 'Red' }
-            Write-Host ("  {0}:{1} -> {2} ({3})" -f $host, $port, $r.Result, $r.Detail) -ForegroundColor $color
+            Write-Host ("  {0}:{1} -> {2} ({3})" -f $routerHost, $port, $r.Result, $r.Detail) -ForegroundColor $color
         }
     }
     Write-Host '  Note: UDP 5938 cannot be conclusively tested with TcpClient; allow outbound UDP 5938 in firewall rules.' -ForegroundColor DarkGray
@@ -195,7 +196,10 @@ Write-Host "`n--- Verdict ---" -ForegroundColor Cyan
 $tcp5938Open = @($portResults | Where-Object { $_.Port -eq 5938 -and $_.Result -eq 'Open' }).Count -gt 0
 $tcp443Open = @($portResults | Where-Object { $_.Port -eq 443 -and $_.Result -eq 'Open' }).Count -gt 0
 $tcp80Open = @($portResults | Where-Object { $_.Port -eq 80 -and $_.Result -eq 'Open' }).Count -gt 0
-$proxyType = ($regDump | Where-Object { $_.Name -eq 'Proxy_Type' -and $_.Path -like '*SOFTWARE\TeamViewer' -and $_.Path -notlike '*WOW6432Node*' } | Select-Object -First 1).Value
+$proxyEntry = $regDump | Where-Object {
+    $_.Name -eq 'Proxy_Type' -and $_.Path -like '*SOFTWARE\TeamViewer' -and $_.Path -notlike '*WOW6432Node*'
+} | Select-Object -First 1
+$proxyType = if ($proxyEntry) { $proxyEntry.Value } else { '(not set)' }
 
 $verdict = [System.Collections.Generic.List[string]]::new()
 if (-not $SkipPortTests) {
