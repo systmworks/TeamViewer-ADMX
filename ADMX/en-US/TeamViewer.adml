@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ADML created by systmworks - https://github.com/systmworks/TeamViewer-ADMX - License CC BY-SA 4.0 -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+  revision="1.2" schemaVersion="1.0">
+  <displayName>TeamViewer Host</displayName>
+  <description>Custom ADMX v1.2 for TeamViewer Host enterprise deployment. Registry reference: Documentation/TeamViewer_Registry_Reference.md</description>
+  <resources>
+    <stringTable>
+      <string id="SupportedTeamViewer">TeamViewer Host 15.x / 16.x</string>
+      <string id="TeamViewerCategory">TeamViewer</string>
+      <string id="Cat_x64">TeamViewer (x64)</string>
+      <string id="Cat_x86">TeamViewer (x86)</string>
+      <string id="Cat_AccessControlIncoming">Access Control (Incoming)</string>
+      <string id="Cat_AccessControlOutgoing">Access Control (Outgoing)</string>
+      <string id="Cat_Features">Features</string>
+      <string id="Cat_Logging">Logging</string>
+      <string id="Cat_Network">Network &amp; Proxy</string>
+      <string id="Cat_Security">Security</string>
+      <string id="Cat_SessionRecording">Session Recording</string>
+      <string id="Cat_Updates">Update Control</string>
+      <string id="Cat_WakeOnLAN">Wake-on-LAN</string>
+
+      <string id="AC_AccessControlType_opt0">0 - Full access</string>
+      <string id="AC_AccessControlType_opt1">1 - Confirm all</string>
+      <string id="AC_AccessControlType_opt2">2 - View only</string>
+      <string id="AC_AccessControlType_opt3">3 - Custom (use granular settings)</string>
+      <string id="AC_AccessControlType_opt4">4 - Deny all</string>
+      <string id="AC_Permission_opt0">Denied</string>
+      <string id="AC_Permission_opt1">Allowed</string>
+      <string id="AC_Permission_opt2">After confirmation</string>
+      <string id="AutoUpdateMode_opt0">0 -- Disabled (no auto-update)</string>
+      <string id="AutoUpdateMode_opt1">1 -- Security updates only</string>
+      <string id="AutoUpdateMode_opt2">2 -- Same major version</string>
+      <string id="AutoUpdateMode_opt3">3 -- All updates (default)</string>
+      <string id="Proxy_Type_opt0">0 -- No proxy</string>
+      <string id="Proxy_Type_opt1">1 -- Auto-detect</string>
+      <string id="Proxy_Type_opt2">2 -- Manual</string>
+      <string id="Security_PasswordStrength_opt1">1 - 1 -- 4 characters (weak)</string>
+      <string id="Security_PasswordStrength_opt2">2 - 2 -- 6 characters</string>
+      <string id="Security_PasswordStrength_opt3">3 - 3 -- 8 characters (default)</string>
+      <string id="Security_PasswordStrength_opt4">4 - 4 -- 10 characters (very secure)</string>
+      <string id="Security_WinLogin_opt0">0 -- Not allowed (default)</string>
+      <string id="Security_WinLogin_opt1">1 -- Administrators only</string>
+      <string id="Security_WinLogin_opt2">2 -- All users</string>
+      <string id="ShowScamProtection_opt0">0 -- Off</string>
+      <string id="ShowScamProtection_opt1">1 -- On</string>
+      <string id="ShowScamProtection_opt2">2 -- Enhanced (default)</string>
+      <string id="UpdateChannel_opt0">0 -- Stable (default)</string>
+      <string id="UpdateChannel_opt1">1 -- Preview</string>
+      <string id="UpdateCheckInterval_opt0">0 -- Never</string>
+      <string id="UpdateCheckInterval_opt1">1 -- Daily</string>
+      <string id="UpdateCheckInterval_opt2">2 -- Weekly (default)</string>
+      <string id="UpdateCheckInterval_opt3">3 -- Monthly</string>
+      <string id="Wol_Mode_opt0">0 -- Disabled</string>
+      <string id="Wol_Mode_opt1">1 -- Public address</string>
+      <string id="Wol_Mode_opt2">2 -- TeamViewer IDs in network</string>
+
+      <string id="AC_AllowOutgoingConnections">Allow Outgoing Connections</string>
+      <string id="AC_Client_AccessControlType">Outgoing Access Control Mode</string>
+      <string id="AC_Client_FileTransfer">Allow File Transfer (Outgoing)</string>
+      <string id="AC_Client_RemoteControl">Allow Remote Control (Outgoing)</string>
+      <string id="AC_Server_AccessControlType">Incoming Access Control Mode</string>
+      <string id="AC_Server_AllowPartnerViewDesktop">Allow Partner to View Desktop</string>
+      <string id="AC_Server_AllowVPN">Allow VPN Connections</string>
+      <string id="AC_Server_ControlRemoteTV">Allow Control of Remote TeamViewer</string>
+      <string id="AC_Server_DisableRemoteInput">Disable Remote Input</string>
+      <string id="AC_Server_DownloadFromFileBox">Allow Download from File Box</string>
+      <string id="AC_Server_ExecuteScripts">Allow Remote Script Execution</string>
+      <string id="AC_Server_FileTransfer">Allow File Transfer (Incoming)</string>
+      <string id="AC_Server_InSessionChat">Allow In-Session Chat</string>
+      <string id="AC_Server_ManageVirtualMonitors">Allow Manage Virtual Monitors</string>
+      <string id="AC_Server_PortForwarding">Allow Port Forwarding</string>
+      <string id="AC_Server_PrintLocal">Allow Printing to Local Printers</string>
+      <string id="AC_Server_PrintRemote">Allow Printing to Remote Printers</string>
+      <string id="AC_Server_RemoteControl">Allow Remote Control</string>
+      <string id="AC_Server_RemoteTerminal">Allow Remote Terminal</string>
+      <string id="AC_Server_SessionInsightsLogging">Allow Session Insights Logging</string>
+      <string id="AC_Server_UploadToFileBox">Allow Upload to File Box</string>
+      <string id="ACFullAccessOnLoginScreen">Full Access on Windows Login Screen</string>
+      <string id="Always_Online">Always Online</string>
+      <string id="Apply_Blacklist_Or_Whitelist_On_Meeting">Apply Allowlist to Meetings</string>
+      <string id="AutorecordRemoteControlEnforced">Enforce Auto-Record Outgoing Sessions</string>
+      <string id="AutoUpdateMode">Auto-Update Mode</string>
+      <string id="ChatToThisMachine">Allow Chat to This Machine</string>
+      <string id="CustomRouter">Custom Router Address</string>
+      <string id="DeactivateSessionRecordingPauseStop">Disable Stopping/Pausing Recordings</string>
+      <string id="DisableTFAForConnections">Prevent TFA for Connections</string>
+      <string id="General_DirectLAN">Enable Direct LAN Connections</string>
+      <string id="HideOnlineStateOfTV">Hide Online Status</string>
+      <string id="IsPreviewVersion">Preview Version Flag</string>
+      <string id="LanOnly">Restrict to LAN Only</string>
+      <string id="ListenHttp">Don't Use Incoming Port 80</string>
+      <string id="Local_BlackScreen">Black Screen for Incoming Connections</string>
+      <string id="Local_DisableInput">Disable Local Input During Connection</string>
+      <string id="Logging">Enable Logging</string>
+      <string id="LogIncomingConnections">Log Incoming Connections</string>
+      <string id="LogOutgoingConnections">Log Outgoing Connections</string>
+      <string id="Proxy_IP">Proxy Server Address</string>
+      <string id="Proxy_Type">Proxy Mode</string>
+      <string id="ReceiveInsiderBuild">Receive Insider Builds</string>
+      <string id="Security_AcceptIncoming">Accept Incoming Connections</string>
+      <string id="Security_ActivateDirectIn">Activate DirectIn Listener</string>
+      <string id="Security_Adminrights">Require Admin Rights for Changes</string>
+      <string id="Security_Disableshutdown">Prevent Remote Shutdown</string>
+      <string id="Security_PasswordStrength">Random Password Strength</string>
+      <string id="Security_WinLogin">Windows Logon Authentication</string>
+      <string id="ShowScamProtection">Scam Protection Warning</string>
+      <string id="UpdateChannel">Update Channel</string>
+      <string id="UpdateCheckInterval">Update Check Interval</string>
+      <string id="UpdateExpectedVersion">Update to Specific Version</string>
+      <string id="UPNP">Enable UPnP</string>
+      <string id="useUDP">Use UDP</string>
+      <string id="UseWhitelist">Enforce Allowlist Mode</string>
+      <string id="Wol_ForceUpdate">Force WoL Neighbor Update</string>
+      <string id="Wol_IP">Wake-on-LAN Public Address</string>
+      <string id="Wol_Mode">Wake-on-LAN Mode</string>
+      <string id="Wol_Port">Wake-on-LAN Port</string>
+
+      <string id="AC_AllowOutgoingConnections_Explain_x64">Controls whether users on this machine can initiate outgoing TeamViewer connections to other computers. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_AllowOutgoingConnections&#10;Type: REG_DWORD Enabled = 1 (allow outgoing)&#10;Disabled = 0 (deny outgoing)</string>
+      <string id="AC_Client_AccessControlType_Explain_x64">Sets the overall access control mode for outgoing (client-side) connections initiated from this machine. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Client_AccessControlType&#10;Type: REG_DWORD 0 = Full access&#10;1 = Confirm all&#10;2 = View only&#10;3 = Custom&#10;4 = Deny all</string>
+      <string id="AC_Client_FileTransfer_Explain_x64">Controls whether file transfer is permitted during outgoing connections from this machine. Requires Outgoing Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Client_Custom_FileTransferAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Client_RemoteControl_Explain_x64">Controls whether remote control is permitted during outgoing connections from this machine. Requires Outgoing Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Client_Custom_RemoteControlAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_AccessControlType_Explain_x64">Sets the overall access control mode for incoming (server-side) connections. When set to Custom (3), use the individual granular permission policies in this category to configure specific capabilities. WARNING: Setting to Deny (4) blocks all incoming connections regardless of other settings. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_AccessControlType&#10;Type: REG_DWORD 0 = Full access&#10;1 = Confirm all&#10;2 = View only&#10;3 = Custom (use granular settings)&#10;4 = Deny all</string>
+      <string id="AC_Server_AllowPartnerViewDesktop_Explain_x64">Controls whether the remote partner can view the local desktop during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowPartnerViewDesktop&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_AllowVPN_Explain_x64">Controls whether the remote partner can establish a TeamViewer VPN connection to this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowVPN&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ControlRemoteTV_Explain_x64">Controls whether the remote partner can control the TeamViewer application itself (e.g. change settings, restart service) during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_ControlRemoteTV&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_DisableRemoteInput_Explain_x64">Controls whether the remote partner's keyboard and mouse input is blocked during an incoming connection. When enabled, the remote user can only view but not interact. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_DisableRemoteImput&#10;Type: REG_DWORD&#10;Note: The registry value name contains a known TeamViewer typo (&quot;Imput&quot; instead of &quot;Input&quot;). Enabled = 1 (disable remote input)&#10;Disabled = 0 (allow remote input)</string>
+      <string id="AC_Server_DownloadFromFileBox_Explain_x64">Controls whether the remote partner can download files from the TeamViewer File Box on this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowMeToDownloadFromFileBox&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ExecuteScripts_Explain_x64">Controls whether the remote partner can execute scripts on this machine via TeamViewer. Requires Incoming Access Control Mode set to Custom (3). WARNING: Allowing script execution gives the remote partner significant control. Only allow for trusted connections. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowExecuteScripts&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_FileTransfer_Explain_x64">Controls whether the remote partner can transfer files to or from this machine during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_FileTransferAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_InSessionChat_Explain_x64">Controls whether the remote partner can use the in-session chat feature during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowInSessionChat&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ManageVirtualMonitors_Explain_x64">Controls whether the remote partner can create, remove, or manage virtual monitors during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowManageVirtualMonitors&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PortForwarding_Explain_x64">Controls whether the remote partner can use port forwarding through this machine's TeamViewer connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowPortForwarding&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PrintLocal_Explain_x64">Controls whether the remote partner can print documents to this machine's local printers. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowToPrintOnMyPrinters&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PrintRemote_Explain_x64">Controls whether the remote partner can print documents to their own printers from this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowToPrintOnRemotePrinters&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_RemoteControl_Explain_x64">Controls whether the remote partner can take control of mouse and keyboard during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_RemoteControlAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_RemoteTerminal_Explain_x64">Controls whether the remote partner can open a remote terminal (command prompt / PowerShell) on this machine. Requires Incoming Access Control Mode set to Custom (3). WARNING: Allowing remote terminal access gives the remote partner direct command-line access. Only allow for trusted connections. Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowRemoteTerminal&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_SessionInsightsLogging_Explain_x64">Controls whether session insights (analytics and usage data) are logged during incoming connections. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowSessionInsightsLogging&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_UploadToFileBox_Explain_x64">Controls whether the remote partner can upload files to the TeamViewer File Box on this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowMeToUploadToFileBox&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="ACFullAccessOnLoginScreen_Explain_x64">Controls whether remote partners have full access (including keyboard and mouse control) when the machine is at the Windows login screen (Ctrl+Alt+Del / credential provider). Registry: HKLM\SOFTWARE\TeamViewer\ACFullAccessOnLoginScreen&#10;Type: REG_DWORD Enabled = 1 (full access at login screen)&#10;Disabled = 0 (limited access at login screen)</string>
+      <string id="Always_Online_Explain_x64">Controls whether the device stays always reachable via TeamViewer, even when no user is logged in. Registry: HKLM\SOFTWARE\TeamViewer\Always_Online&#10;Type: REG_DWORD Enabled = 1 (always online)&#10;Disabled = 0 (standard behavior)</string>
+      <string id="Apply_Blacklist_Or_Whitelist_On_Meeting_Explain_x64">When enabled, the allowlist/blocklist rules are also applied to TeamViewer Meeting connections, not just remote control sessions. Registry: HKLM\SOFTWARE\TeamViewer\Apply_Blacklist_Or_Whitelist_On_Meeting&#10;Type: REG_DWORD Enabled = 1 (apply to meetings)&#10;Disabled = 0 (meetings unrestricted)</string>
+      <string id="AutorecordRemoteControlEnforced_Explain_x64">When enabled, all outgoing remote control sessions are automatically recorded. Users cannot disable recording. Registry: HKLM\SOFTWARE\TeamViewer\AutorecordRemoteControlEnforced&#10;Type: REG_DWORD Enabled = 1 (enforce auto-record)&#10;Disabled = 0 (optional recording)</string>
+      <string id="AutoUpdateMode_Explain_x64">Controls TeamViewer's automatic update behavior. NOTE: Setting this to 0 (Disabled) means TeamViewer will never auto-update. Pair with a separate patching strategy (WSUS, SCCM, Intune) to avoid running unpatched versions. Registry: HKLM\SOFTWARE\TeamViewer\AutoUpdateMode&#10;Type: REG_DWORD 0 = Disabled (no auto-update)&#10;1 = Security updates only&#10;2 = Same major version&#10;3 = All updates (default)</string>
+      <string id="ChatToThisMachine_Explain_x64">Controls whether remote partners can send chat messages to the user on this machine via TeamViewer. Registry: HKLM\SOFTWARE\TeamViewer\ChatToThisMachine&#10;Type: REG_DWORD Enabled = 1 (allow chat)&#10;Disabled = 0 (disable chat)</string>
+      <string id="CustomRouter_Explain_x64">Specifies a custom TeamViewer router address. Used in environments with dedicated TeamViewer routing infrastructure (e.g. on-premises TeamViewer Tensor). Leave empty to use default TeamViewer routing servers. Registry: HKLM\SOFTWARE\TeamViewer\CustomRouter&#10;Type: REG_SZ</string>
+      <string id="DeactivateSessionRecordingPauseStop_Explain_x64">When enabled, users cannot pause or stop an active session recording. Ensures complete session capture for compliance. Registry: HKLM\SOFTWARE\TeamViewer\DeactivateSessionRecordingPauseStop&#10;Type: REG_DWORD Enabled = 1 (prevent stop/pause)&#10;Disabled = 0 (allow stop/pause)</string>
+      <string id="DisableTFAForConnections_Explain_x64">Controls whether two-factor authentication (TFA) can be activated for incoming connections. When enabled, users cannot enable TFA for connections. Registry: HKLM\SOFTWARE\TeamViewer\DisableTFAForConnections&#10;Type: REG_DWORD Enabled = 1 (prevent TFA)&#10;Disabled = 0 (allow TFA)</string>
+      <string id="General_DirectLAN_Explain_x64">Controls whether TeamViewer can establish direct LAN connections to other TeamViewer instances on the same network, bypassing the TeamViewer routing infrastructure. Registry: HKLM\SOFTWARE\TeamViewer\General_DirectLAN&#10;Type: REG_DWORD Enabled = 1 (enable direct LAN)&#10;Disabled = 0 (standard routing only)</string>
+      <string id="HideOnlineStateOfTV_Explain_x64">Controls whether this machine's TeamViewer online status is visible to other TeamViewer users. Registry: HKLM\SOFTWARE\TeamViewer\HideOnlineStateOfTV&#10;Type: REG_DWORD Enabled = 1 (hide online status)&#10;Disabled = 0 (show online status)</string>
+      <string id="IsPreviewVersion_Explain_x64">Indicates whether the installed TeamViewer version is a preview/beta release. Registry: HKLM\SOFTWARE\TeamViewer\IsPreviewVersion&#10;Type: REG_DWORD Enabled = 1 (preview version)&#10;Disabled = 0 (stable version)</string>
+      <string id="LanOnly_Explain_x64">When enabled, TeamViewer will only allow connections within the local area network and will not connect through the internet. WARNING: Enabling this completely blocks internet-based remote support. Only use if all support staff are on the same network. Registry: HKLM\SOFTWARE\TeamViewer\LanOnly&#10;Type: REG_DWORD Enabled = 1 (LAN only -- no internet connections)&#10;Disabled = 0 (allow internet connections)</string>
+      <string id="ListenHttp_Explain_x64">Controls whether TeamViewer listens for incoming connections on TCP port 80 (HTTP DirectIn). WARNING: This setting affects the INCOMING DirectIn listener only. It does NOT control outbound port selection (5938, 443, 80 fallback order). Outbound port preference is hardcoded by TeamViewer and cannot be changed via registry or GPO. When Enabled, TeamViewer does NOT listen on incoming port 80 (ListenHttp = 0). When Disabled, TeamViewer may listen on port 80 if available. Registry: HKLM\SOFTWARE\TeamViewer\ListenHttp Type: REG_DWORD Enabled = 0 (do not listen on port 80) Disabled = 1 (may listen on port 80)</string>
+      <string id="Local_BlackScreen_Explain_x64">When enabled, the local screen is blacked out during incoming remote connections, preventing anyone physically present from seeing what the remote partner is doing. Registry: HKLM\SOFTWARE\TeamViewer\Local_BlackScreen&#10;Type: REG_DWORD Enabled = 1 (black screen on)&#10;Disabled = 0 (local screen visible)</string>
+      <string id="Local_DisableInput_Explain_x64">When enabled, the local keyboard and mouse input is disabled during incoming remote connections, preventing the local user from interfering. Registry: HKLM\SOFTWARE\TeamViewer\Local_DisableInput&#10;Type: REG_DWORD Enabled = 1 (local input disabled)&#10;Disabled = 0 (local input allowed)</string>
+      <string id="Logging_Explain_x64">Controls whether TeamViewer writes diagnostic log files. Recommended to keep enabled for enterprise environments to support troubleshooting and auditing. Registry: HKLM\SOFTWARE\TeamViewer\Logging&#10;Type: REG_DWORD Enabled = 1 (logging on)&#10;Disabled = 0 (logging off)</string>
+      <string id="LogIncomingConnections_Explain_x64">Controls whether TeamViewer logs details of incoming remote connections. Recommended for security auditing in enterprise environments. Registry: HKLM\SOFTWARE\TeamViewer\LogIncomingConnections&#10;Type: REG_DWORD Enabled = 1 (log incoming)&#10;Disabled = 0 (do not log)</string>
+      <string id="LogOutgoingConnections_Explain_x64">Controls whether TeamViewer logs details of outgoing remote connections. Registry: HKLM\SOFTWARE\TeamViewer\LogOutgoingConnections&#10;Type: REG_DWORD Enabled = 1 (log outgoing)&#10;Disabled = 0 (do not log)</string>
+      <string id="Proxy_IP_Explain_x64">Specifies the proxy server address when Proxy Mode is set to Manual (2). Format: hostname:port (e.g. proxy.example.com:8080) Registry: HKLM\SOFTWARE\TeamViewer\Proxy_IP&#10;Type: REG_SZ</string>
+      <string id="Proxy_Type_Explain_x64">Controls TeamViewer's proxy server configuration. When set to Manual (2), configure the Proxy Server Address policy to specify the proxy. Registry: HKLM\SOFTWARE\TeamViewer\Proxy_Type&#10;Type: REG_DWORD 0 = No proxy&#10;1 = Auto-detect&#10;2 = Manual (specify address via Proxy_IP)</string>
+      <string id="ReceiveInsiderBuild_Explain_x64">Controls whether this installation receives insider/preview builds of TeamViewer. Registry: HKLM\SOFTWARE\TeamViewer\ReceiveInsiderBuild&#10;Type: REG_DWORD Enabled = 1 (receive insider builds)&#10;Disabled = 0 (stable channel only)</string>
+      <string id="Security_AcceptIncoming_Explain_x64">Controls whether TeamViewer accepts incoming remote connections. WARNING: Disabling this prevents all remote support to the machine. Registry: HKLM\SOFTWARE\TeamViewer\Security_AcceptIncoming&#10;Type: REG_DWORD Enabled = 1 (accept incoming connections)&#10;Disabled = 0 (reject all incoming connections)</string>
+      <string id="Security_ActivateDirectIn_Explain_x64">Controls whether TeamViewer activates the DirectIn listener for incoming connections. WARNING: This setting affects the INCOMING DirectIn listener only. It does NOT control outbound port selection (5938, 443, 80 fallback order). Outbound port preference is hardcoded by TeamViewer and cannot be changed via registry or GPO. Registry: HKLM\SOFTWARE\TeamViewer\Security_ActivateDirectIn Type: REG_DWORD Enabled = 1 (activate DirectIn) Disabled = 0 (DirectIn inactive)</string>
+      <string id="Security_Adminrights_Explain_x64">Controls whether changes to TeamViewer settings require administrator rights. When enabled, users without admin rights cannot modify TeamViewer configuration. Registry: HKLM\SOFTWARE\TeamViewer\Security_Adminrights&#10;Type: REG_DWORD Enabled = 1 (require admin rights)&#10;Disabled = 0 (no admin rights required)</string>
+      <string id="Security_Disableshutdown_Explain_x64">Controls whether the remote partner can shut down or restart the computer via TeamViewer. Registry: HKLM\SOFTWARE\TeamViewer\Security_Disableshutdown&#10;Type: REG_DWORD Enabled = 1 (prevent remote shutdown)&#10;Disabled = 0 (allow remote shutdown)</string>
+      <string id="Security_PasswordStrength_Explain_x64">Sets the complexity level for the randomly generated session password displayed in the TeamViewer main window. Higher values produce longer, harder-to-guess passwords. Registry: HKLM\SOFTWARE\TeamViewer\Security_PasswordStrength&#10;Type: REG_DWORD 1 = 4 characters (weak)&#10;2 = 6 characters&#10;3 = 8 characters (default)&#10;4 = 10 characters (very secure, recommended for enterprise)</string>
+      <string id="Security_WinLogin_Explain_x64">Controls whether Windows credentials can be used to authenticate TeamViewer connections instead of (or in addition to) the TeamViewer password. Registry: HKLM\SOFTWARE\TeamViewer\Security_WinLogin&#10;Type: REG_DWORD 0 = Not allowed (default)&#10;1 = Administrators only&#10;2 = All users</string>
+      <string id="ShowScamProtection_Explain_x64">Controls the scam protection warning level shown to users when an incoming connection is established. Enhanced mode shows additional warnings for potentially suspicious sessions. Registry: HKLM\SOFTWARE\TeamViewer\ShowScamProtection&#10;Type: REG_DWORD 0 = Off&#10;1 = On&#10;2 = Enhanced (default)</string>
+      <string id="UpdateChannel_Explain_x64">Sets the update channel for TeamViewer updates. Registry: HKLM\SOFTWARE\TeamViewer\UpdateChannel&#10;Type: REG_DWORD 0 = Stable (default)&#10;1 = Preview</string>
+      <string id="UpdateCheckInterval_Explain_x64">Controls how often TeamViewer checks for available updates. Registry: HKLM\SOFTWARE\TeamViewer\UpdateCheckInterval&#10;Type: REG_DWORD 0 = Never&#10;1 = Daily&#10;2 = Weekly (default)&#10;3 = Monthly</string>
+      <string id="UpdateExpectedVersion_Explain_x64">Pins TeamViewer to a specific version. When set, TeamViewer will attempt to install this exact version and will not update beyond it. Format: version string (e.g. 15.58.4)&#10;Leave empty for normal update behavior. Registry: HKLM\SOFTWARE\TeamViewer\UpdateExpectedVersion&#10;Type: REG_SZ</string>
+      <string id="UPNP_Explain_x64">Controls whether TeamViewer uses UPnP (Universal Plug and Play) for automatic port mapping on the local router. Registry: HKLM\SOFTWARE\TeamViewer\UPNP&#10;Type: REG_DWORD Enabled = 1 (enable UPnP)&#10;Disabled = 0 (disable UPnP)</string>
+      <string id="useUDP_Explain_x64">Controls whether TeamViewer uses UDP for connections. UDP can improve connection performance in some network environments. Registry: HKLM\SOFTWARE\TeamViewer\useUDP&#10;Type: REG_DWORD Enabled = 1 (use UDP)&#10;Disabled = 0 (TCP only)</string>
+      <string id="UseWhitelist_Explain_x64">When enabled, only TeamViewer IDs or accounts listed in the allowlist (Whitelist registry value) are permitted to connect. WARNING: Enabling this without a populated Whitelist (REG_MULTI_SZ at HKLM\SOFTWARE\TeamViewer) will block ALL incoming connections. The Whitelist value itself cannot be managed via this ADMX; use TeamViewer Management Console, MSI SETTINGSFILE parameter, or a .reg import. Registry: HKLM\SOFTWARE\TeamViewer\UseWhitelist&#10;Type: REG_DWORD Enabled = 1 (enforce allowlist)&#10;Disabled = 0 (no allowlist enforcement)</string>
+      <string id="Wol_ForceUpdate_Explain_x64">When enabled, forces an update of the Wake-on-LAN neighbor list. Use this to refresh the list of devices that can be woken. Registry: HKLM\SOFTWARE\TeamViewer\Wol_ForceUpdate&#10;Type: REG_DWORD Enabled = 1 (force update)&#10;Disabled = 0 (normal behavior)</string>
+      <string id="Wol_IP_Explain_x64">Specifies the public IP address or hostname used for Wake-on-LAN when Wol_Mode is set to Public address (1). Registry: HKLM\SOFTWARE\TeamViewer\Wol_IP&#10;Type: REG_SZ</string>
+      <string id="Wol_Mode_Explain_x64">Controls the Wake-on-LAN mode for this device. Registry: HKLM\SOFTWARE\TeamViewer\Wol_Mode&#10;Type: REG_DWORD 0 = Disabled&#10;1 = Public address (use Wol_IP)&#10;2 = TeamViewer IDs in network</string>
+      <string id="Wol_Port_Explain_x64">Specifies the port number used for Wake-on-LAN packets. Registry: HKLM\SOFTWARE\TeamViewer\Wol_Port&#10;Type: REG_DWORD&#10;Range: 0-65535</string>
+
+      <string id="AC_AllowOutgoingConnections_Explain_x86">Controls whether users on this machine can initiate outgoing TeamViewer connections to other computers. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_AllowOutgoingConnections&#10;Type: REG_DWORD Enabled = 1 (allow outgoing)&#10;Disabled = 0 (deny outgoing)</string>
+      <string id="AC_Client_AccessControlType_Explain_x86">Sets the overall access control mode for outgoing (client-side) connections initiated from this machine. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Client_AccessControlType&#10;Type: REG_DWORD 0 = Full access&#10;1 = Confirm all&#10;2 = View only&#10;3 = Custom&#10;4 = Deny all</string>
+      <string id="AC_Client_FileTransfer_Explain_x86">Controls whether file transfer is permitted during outgoing connections from this machine. Requires Outgoing Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Client_Custom_FileTransferAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Client_RemoteControl_Explain_x86">Controls whether remote control is permitted during outgoing connections from this machine. Requires Outgoing Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Client_Custom_RemoteControlAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_AccessControlType_Explain_x86">Sets the overall access control mode for incoming (server-side) connections. When set to Custom (3), use the individual granular permission policies in this category to configure specific capabilities. WARNING: Setting to Deny (4) blocks all incoming connections regardless of other settings. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_AccessControlType&#10;Type: REG_DWORD 0 = Full access&#10;1 = Confirm all&#10;2 = View only&#10;3 = Custom (use granular settings)&#10;4 = Deny all</string>
+      <string id="AC_Server_AllowPartnerViewDesktop_Explain_x86">Controls whether the remote partner can view the local desktop during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowPartnerViewDesktop&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_AllowVPN_Explain_x86">Controls whether the remote partner can establish a TeamViewer VPN connection to this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowVPN&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ControlRemoteTV_Explain_x86">Controls whether the remote partner can control the TeamViewer application itself (e.g. change settings, restart service) during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_ControlRemoteTV&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_DisableRemoteInput_Explain_x86">Controls whether the remote partner's keyboard and mouse input is blocked during an incoming connection. When enabled, the remote user can only view but not interact. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_DisableRemoteImput&#10;Type: REG_DWORD&#10;Note: The registry value name contains a known TeamViewer typo (&quot;Imput&quot; instead of &quot;Input&quot;). Enabled = 1 (disable remote input)&#10;Disabled = 0 (allow remote input)</string>
+      <string id="AC_Server_DownloadFromFileBox_Explain_x86">Controls whether the remote partner can download files from the TeamViewer File Box on this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowMeToDownloadFromFileBox&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ExecuteScripts_Explain_x86">Controls whether the remote partner can execute scripts on this machine via TeamViewer. Requires Incoming Access Control Mode set to Custom (3). WARNING: Allowing script execution gives the remote partner significant control. Only allow for trusted connections. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowExecuteScripts&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_FileTransfer_Explain_x86">Controls whether the remote partner can transfer files to or from this machine during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_FileTransferAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_InSessionChat_Explain_x86">Controls whether the remote partner can use the in-session chat feature during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowInSessionChat&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_ManageVirtualMonitors_Explain_x86">Controls whether the remote partner can create, remove, or manage virtual monitors during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowManageVirtualMonitors&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PortForwarding_Explain_x86">Controls whether the remote partner can use port forwarding through this machine's TeamViewer connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowPortForwarding&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PrintLocal_Explain_x86">Controls whether the remote partner can print documents to this machine's local printers. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowToPrintOnMyPrinters&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_PrintRemote_Explain_x86">Controls whether the remote partner can print documents to their own printers from this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowToPrintOnRemotePrinters&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_RemoteControl_Explain_x86">Controls whether the remote partner can take control of mouse and keyboard during an incoming connection. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_RemoteControlAccess&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_RemoteTerminal_Explain_x86">Controls whether the remote partner can open a remote terminal (command prompt / PowerShell) on this machine. Requires Incoming Access Control Mode set to Custom (3). WARNING: Allowing remote terminal access gives the remote partner direct command-line access. Only allow for trusted connections. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowRemoteTerminal&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_SessionInsightsLogging_Explain_x86">Controls whether session insights (analytics and usage data) are logged during incoming connections. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowSessionInsightsLogging&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="AC_Server_UploadToFileBox_Explain_x86">Controls whether the remote partner can upload files to the TeamViewer File Box on this machine. Requires Incoming Access Control Mode set to Custom (3). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AccessControl\AccessControl\AC_Server_Custom_AllowMeToUploadToFileBox&#10;Type: REG_DWORD 0 = Denied&#10;1 = Allowed&#10;2 = After confirmation</string>
+      <string id="ACFullAccessOnLoginScreen_Explain_x86">Controls whether remote partners have full access (including keyboard and mouse control) when the machine is at the Windows login screen (Ctrl+Alt+Del / credential provider). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\ACFullAccessOnLoginScreen&#10;Type: REG_DWORD Enabled = 1 (full access at login screen)&#10;Disabled = 0 (limited access at login screen)</string>
+      <string id="Always_Online_Explain_x86">Controls whether the device stays always reachable via TeamViewer, even when no user is logged in. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Always_Online&#10;Type: REG_DWORD Enabled = 1 (always online)&#10;Disabled = 0 (standard behavior)</string>
+      <string id="Apply_Blacklist_Or_Whitelist_On_Meeting_Explain_x86">When enabled, the allowlist/blocklist rules are also applied to TeamViewer Meeting connections, not just remote control sessions. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Apply_Blacklist_Or_Whitelist_On_Meeting&#10;Type: REG_DWORD Enabled = 1 (apply to meetings)&#10;Disabled = 0 (meetings unrestricted)</string>
+      <string id="AutorecordRemoteControlEnforced_Explain_x86">When enabled, all outgoing remote control sessions are automatically recorded. Users cannot disable recording. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AutorecordRemoteControlEnforced&#10;Type: REG_DWORD Enabled = 1 (enforce auto-record)&#10;Disabled = 0 (optional recording)</string>
+      <string id="AutoUpdateMode_Explain_x86">Controls TeamViewer's automatic update behavior. NOTE: Setting this to 0 (Disabled) means TeamViewer will never auto-update. Pair with a separate patching strategy (WSUS, SCCM, Intune) to avoid running unpatched versions. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\AutoUpdateMode&#10;Type: REG_DWORD 0 = Disabled (no auto-update)&#10;1 = Security updates only&#10;2 = Same major version&#10;3 = All updates (default)</string>
+      <string id="ChatToThisMachine_Explain_x86">Controls whether remote partners can send chat messages to the user on this machine via TeamViewer. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\ChatToThisMachine&#10;Type: REG_DWORD Enabled = 1 (allow chat)&#10;Disabled = 0 (disable chat)</string>
+      <string id="CustomRouter_Explain_x86">Specifies a custom TeamViewer router address. Used in environments with dedicated TeamViewer routing infrastructure (e.g. on-premises TeamViewer Tensor). Leave empty to use default TeamViewer routing servers. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\CustomRouter&#10;Type: REG_SZ</string>
+      <string id="DeactivateSessionRecordingPauseStop_Explain_x86">When enabled, users cannot pause or stop an active session recording. Ensures complete session capture for compliance. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\DeactivateSessionRecordingPauseStop&#10;Type: REG_DWORD Enabled = 1 (prevent stop/pause)&#10;Disabled = 0 (allow stop/pause)</string>
+      <string id="DisableTFAForConnections_Explain_x86">Controls whether two-factor authentication (TFA) can be activated for incoming connections. When enabled, users cannot enable TFA for connections. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\DisableTFAForConnections&#10;Type: REG_DWORD Enabled = 1 (prevent TFA)&#10;Disabled = 0 (allow TFA)</string>
+      <string id="General_DirectLAN_Explain_x86">Controls whether TeamViewer can establish direct LAN connections to other TeamViewer instances on the same network, bypassing the TeamViewer routing infrastructure. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\General_DirectLAN&#10;Type: REG_DWORD Enabled = 1 (enable direct LAN)&#10;Disabled = 0 (standard routing only)</string>
+      <string id="HideOnlineStateOfTV_Explain_x86">Controls whether this machine's TeamViewer online status is visible to other TeamViewer users. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\HideOnlineStateOfTV&#10;Type: REG_DWORD Enabled = 1 (hide online status)&#10;Disabled = 0 (show online status)</string>
+      <string id="IsPreviewVersion_Explain_x86">Indicates whether the installed TeamViewer version is a preview/beta release. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\IsPreviewVersion&#10;Type: REG_DWORD Enabled = 1 (preview version)&#10;Disabled = 0 (stable version)</string>
+      <string id="LanOnly_Explain_x86">When enabled, TeamViewer will only allow connections within the local area network and will not connect through the internet. WARNING: Enabling this completely blocks internet-based remote support. Only use if all support staff are on the same network. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\LanOnly&#10;Type: REG_DWORD Enabled = 1 (LAN only -- no internet connections)&#10;Disabled = 0 (allow internet connections)</string>
+      <string id="ListenHttp_Explain_x86">Controls whether TeamViewer listens for incoming connections on TCP port 80 (HTTP DirectIn). WARNING: This setting affects the INCOMING DirectIn listener only. It does NOT control outbound port selection (5938, 443, 80 fallback order). Outbound port preference is hardcoded by TeamViewer and cannot be changed via registry or GPO. When Enabled, TeamViewer does NOT listen on incoming port 80 (ListenHttp = 0). When Disabled, TeamViewer may listen on port 80 if available. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\ListenHttp Type: REG_DWORD Enabled = 0 (do not listen on port 80) Disabled = 1 (may listen on port 80)</string>
+      <string id="Local_BlackScreen_Explain_x86">When enabled, the local screen is blacked out during incoming remote connections, preventing anyone physically present from seeing what the remote partner is doing. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Local_BlackScreen&#10;Type: REG_DWORD Enabled = 1 (black screen on)&#10;Disabled = 0 (local screen visible)</string>
+      <string id="Local_DisableInput_Explain_x86">When enabled, the local keyboard and mouse input is disabled during incoming remote connections, preventing the local user from interfering. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Local_DisableInput&#10;Type: REG_DWORD Enabled = 1 (local input disabled)&#10;Disabled = 0 (local input allowed)</string>
+      <string id="Logging_Explain_x86">Controls whether TeamViewer writes diagnostic log files. Recommended to keep enabled for enterprise environments to support troubleshooting and auditing. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Logging&#10;Type: REG_DWORD Enabled = 1 (logging on)&#10;Disabled = 0 (logging off)</string>
+      <string id="LogIncomingConnections_Explain_x86">Controls whether TeamViewer logs details of incoming remote connections. Recommended for security auditing in enterprise environments. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\LogIncomingConnections&#10;Type: REG_DWORD Enabled = 1 (log incoming)&#10;Disabled = 0 (do not log)</string>
+      <string id="LogOutgoingConnections_Explain_x86">Controls whether TeamViewer logs details of outgoing remote connections. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\LogOutgoingConnections&#10;Type: REG_DWORD Enabled = 1 (log outgoing)&#10;Disabled = 0 (do not log)</string>
+      <string id="Proxy_IP_Explain_x86">Specifies the proxy server address when Proxy Mode is set to Manual (2). Format: hostname:port (e.g. proxy.example.com:8080) Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Proxy_IP&#10;Type: REG_SZ</string>
+      <string id="Proxy_Type_Explain_x86">Controls TeamViewer's proxy server configuration. When set to Manual (2), configure the Proxy Server Address policy to specify the proxy. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Proxy_Type&#10;Type: REG_DWORD 0 = No proxy&#10;1 = Auto-detect&#10;2 = Manual (specify address via Proxy_IP)</string>
+      <string id="ReceiveInsiderBuild_Explain_x86">Controls whether this installation receives insider/preview builds of TeamViewer. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\ReceiveInsiderBuild&#10;Type: REG_DWORD Enabled = 1 (receive insider builds)&#10;Disabled = 0 (stable channel only)</string>
+      <string id="Security_AcceptIncoming_Explain_x86">Controls whether TeamViewer accepts incoming remote connections. WARNING: Disabling this prevents all remote support to the machine. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_AcceptIncoming&#10;Type: REG_DWORD Enabled = 1 (accept incoming connections)&#10;Disabled = 0 (reject all incoming connections)</string>
+      <string id="Security_ActivateDirectIn_Explain_x86">Controls whether TeamViewer activates the DirectIn listener for incoming connections. WARNING: This setting affects the INCOMING DirectIn listener only. It does NOT control outbound port selection (5938, 443, 80 fallback order). Outbound port preference is hardcoded by TeamViewer and cannot be changed via registry or GPO. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_ActivateDirectIn Type: REG_DWORD Enabled = 1 (activate DirectIn) Disabled = 0 (DirectIn inactive)</string>
+      <string id="Security_Adminrights_Explain_x86">Controls whether changes to TeamViewer settings require administrator rights. When enabled, users without admin rights cannot modify TeamViewer configuration. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_Adminrights&#10;Type: REG_DWORD Enabled = 1 (require admin rights)&#10;Disabled = 0 (no admin rights required)</string>
+      <string id="Security_Disableshutdown_Explain_x86">Controls whether the remote partner can shut down or restart the computer via TeamViewer. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_Disableshutdown&#10;Type: REG_DWORD Enabled = 1 (prevent remote shutdown)&#10;Disabled = 0 (allow remote shutdown)</string>
+      <string id="Security_PasswordStrength_Explain_x86">Sets the complexity level for the randomly generated session password displayed in the TeamViewer main window. Higher values produce longer, harder-to-guess passwords. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_PasswordStrength&#10;Type: REG_DWORD 1 = 4 characters (weak)&#10;2 = 6 characters&#10;3 = 8 characters (default)&#10;4 = 10 characters (very secure, recommended for enterprise)</string>
+      <string id="Security_WinLogin_Explain_x86">Controls whether Windows credentials can be used to authenticate TeamViewer connections instead of (or in addition to) the TeamViewer password. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Security_WinLogin&#10;Type: REG_DWORD 0 = Not allowed (default)&#10;1 = Administrators only&#10;2 = All users</string>
+      <string id="ShowScamProtection_Explain_x86">Controls the scam protection warning level shown to users when an incoming connection is established. Enhanced mode shows additional warnings for potentially suspicious sessions. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\ShowScamProtection&#10;Type: REG_DWORD 0 = Off&#10;1 = On&#10;2 = Enhanced (default)</string>
+      <string id="UpdateChannel_Explain_x86">Sets the update channel for TeamViewer updates. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\UpdateChannel&#10;Type: REG_DWORD 0 = Stable (default)&#10;1 = Preview</string>
+      <string id="UpdateCheckInterval_Explain_x86">Controls how often TeamViewer checks for available updates. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\UpdateCheckInterval&#10;Type: REG_DWORD 0 = Never&#10;1 = Daily&#10;2 = Weekly (default)&#10;3 = Monthly</string>
+      <string id="UpdateExpectedVersion_Explain_x86">Pins TeamViewer to a specific version. When set, TeamViewer will attempt to install this exact version and will not update beyond it. Format: version string (e.g. 15.58.4)&#10;Leave empty for normal update behavior. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\UpdateExpectedVersion&#10;Type: REG_SZ</string>
+      <string id="UPNP_Explain_x86">Controls whether TeamViewer uses UPnP (Universal Plug and Play) for automatic port mapping on the local router. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\UPNP&#10;Type: REG_DWORD Enabled = 1 (enable UPnP)&#10;Disabled = 0 (disable UPnP)</string>
+      <string id="useUDP_Explain_x86">Controls whether TeamViewer uses UDP for connections. UDP can improve connection performance in some network environments. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\useUDP&#10;Type: REG_DWORD Enabled = 1 (use UDP)&#10;Disabled = 0 (TCP only)</string>
+      <string id="UseWhitelist_Explain_x86">When enabled, only TeamViewer IDs or accounts listed in the allowlist (Whitelist registry value) are permitted to connect. WARNING: Enabling this without a populated Whitelist (REG_MULTI_SZ at HKLM\SOFTWARE\WOW6432Node\TeamViewer) will block ALL incoming connections. The Whitelist value itself cannot be managed via this ADMX; use TeamViewer Management Console, MSI SETTINGSFILE parameter, or a .reg import. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\UseWhitelist&#10;Type: REG_DWORD Enabled = 1 (enforce allowlist)&#10;Disabled = 0 (no allowlist enforcement)</string>
+      <string id="Wol_ForceUpdate_Explain_x86">When enabled, forces an update of the Wake-on-LAN neighbor list. Use this to refresh the list of devices that can be woken. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Wol_ForceUpdate&#10;Type: REG_DWORD Enabled = 1 (force update)&#10;Disabled = 0 (normal behavior)</string>
+      <string id="Wol_IP_Explain_x86">Specifies the public IP address or hostname used for Wake-on-LAN when Wol_Mode is set to Public address (1). Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Wol_IP&#10;Type: REG_SZ</string>
+      <string id="Wol_Mode_Explain_x86">Controls the Wake-on-LAN mode for this device. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Wol_Mode&#10;Type: REG_DWORD 0 = Disabled&#10;1 = Public address (use Wol_IP)&#10;2 = TeamViewer IDs in network</string>
+      <string id="Wol_Port_Explain_x86">Specifies the port number used for Wake-on-LAN packets. Registry: HKLM\SOFTWARE\WOW6432Node\TeamViewer\Wol_Port&#10;Type: REG_DWORD&#10;Range: 0-65535</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="AC_Server_ControlRemoteTV_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_ControlRemoteTV_enum_x64">Allow Control of Remote TeamViewer:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_DownloadFromFileBox_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_DownloadFromFileBox_enum_x64">Allow Download from File Box:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_FileTransfer_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Server_FileTransfer_enum_x64">Allow File Transfer (Incoming):</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_InSessionChat_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_InSessionChat_enum_x64">Allow In-Session Chat:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_ManageVirtualMonitors_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_ManageVirtualMonitors_enum_x64">Allow Manage Virtual Monitors:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AllowPartnerViewDesktop_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Server_AllowPartnerViewDesktop_enum_x64">Allow Partner to View Desktop:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PortForwarding_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_PortForwarding_enum_x64">Allow Port Forwarding:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PrintLocal_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_PrintLocal_enum_x64">Allow Printing to Local Printers:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PrintRemote_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_PrintRemote_enum_x64">Allow Printing to Remote Printers:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_RemoteControl_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Server_RemoteControl_enum_x64">Allow Remote Control:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_ExecuteScripts_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_ExecuteScripts_enum_x64">Allow Remote Script Execution:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_RemoteTerminal_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_RemoteTerminal_enum_x64">Allow Remote Terminal:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_SessionInsightsLogging_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Server_SessionInsightsLogging_enum_x64">Allow Session Insights Logging:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_UploadToFileBox_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_UploadToFileBox_enum_x64">Allow Upload to File Box:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AllowVPN_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Server_AllowVPN_enum_x64">Allow VPN Connections:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AccessControlType_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Server_AccessControlType_enum_x64">Incoming Access Control Mode:</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_FileTransfer_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Client_FileTransfer_enum_x64">Allow File Transfer (Outgoing):</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_RemoteControl_enum_x64">
+        <dropdownList defaultItem="1" refId="AC_Client_RemoteControl_enum_x64">Allow Remote Control (Outgoing):</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_AccessControlType_enum_x64">
+        <dropdownList defaultItem="0" refId="AC_Client_AccessControlType_enum_x64">Outgoing Access Control Mode:</dropdownList>
+      </presentation>
+      <presentation id="CustomRouter_text_x64">
+        <textBox refId="CustomRouter_text_x64">
+          <label>Custom router address:</label>
+        </textBox>
+      </presentation>
+      <presentation id="Proxy_Type_enum_x64">
+        <dropdownList defaultItem="0" refId="Proxy_Type_enum_x64">Proxy Mode:</dropdownList>
+      </presentation>
+      <presentation id="Proxy_IP_text_x64">
+        <textBox refId="Proxy_IP_text_x64">
+          <label>Proxy server address (host:port):</label>
+        </textBox>
+      </presentation>
+      <presentation id="Security_PasswordStrength_enum_x64">
+        <dropdownList defaultItem="2" refId="Security_PasswordStrength_enum_x64">Random Password Strength:</dropdownList>
+      </presentation>
+      <presentation id="ShowScamProtection_enum_x64">
+        <dropdownList defaultItem="2" refId="ShowScamProtection_enum_x64">Scam Protection Warning:</dropdownList>
+      </presentation>
+      <presentation id="Security_WinLogin_enum_x64">
+        <dropdownList defaultItem="0" refId="Security_WinLogin_enum_x64">Windows Logon Authentication:</dropdownList>
+      </presentation>
+      <presentation id="AutoUpdateMode_enum_x64">
+        <dropdownList defaultItem="3" refId="AutoUpdateMode_enum_x64">Auto-Update Mode:</dropdownList>
+      </presentation>
+      <presentation id="UpdateChannel_enum_x64">
+        <dropdownList defaultItem="0" refId="UpdateChannel_enum_x64">Update Channel:</dropdownList>
+      </presentation>
+      <presentation id="UpdateCheckInterval_enum_x64">
+        <dropdownList defaultItem="2" refId="UpdateCheckInterval_enum_x64">Update Check Interval:</dropdownList>
+      </presentation>
+      <presentation id="UpdateExpectedVersion_text_x64">
+        <textBox refId="UpdateExpectedVersion_text_x64">
+          <label>Pin to version (e.g. 15.58.4):</label>
+        </textBox>
+      </presentation>
+      <presentation id="Wol_Mode_enum_x64">
+        <dropdownList defaultItem="0" refId="Wol_Mode_enum_x64">Wake-on-LAN Mode:</dropdownList>
+      </presentation>
+      <presentation id="Wol_Port_decimal_x64">
+        <decimalTextBox refId="Wol_Port_decimal_x64" defaultValue="0">Port number:</decimalTextBox>
+      </presentation>
+      <presentation id="Wol_IP_text_x64">
+        <textBox refId="Wol_IP_text_x64">
+          <label>Public address (IP or hostname):</label>
+        </textBox>
+      </presentation>
+      <presentation id="AC_Server_ControlRemoteTV_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_ControlRemoteTV_enum_x86">Allow Control of Remote TeamViewer:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_DownloadFromFileBox_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_DownloadFromFileBox_enum_x86">Allow Download from File Box:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_FileTransfer_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Server_FileTransfer_enum_x86">Allow File Transfer (Incoming):</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_InSessionChat_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_InSessionChat_enum_x86">Allow In-Session Chat:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_ManageVirtualMonitors_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_ManageVirtualMonitors_enum_x86">Allow Manage Virtual Monitors:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AllowPartnerViewDesktop_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Server_AllowPartnerViewDesktop_enum_x86">Allow Partner to View Desktop:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PortForwarding_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_PortForwarding_enum_x86">Allow Port Forwarding:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PrintLocal_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_PrintLocal_enum_x86">Allow Printing to Local Printers:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_PrintRemote_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_PrintRemote_enum_x86">Allow Printing to Remote Printers:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_RemoteControl_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Server_RemoteControl_enum_x86">Allow Remote Control:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_ExecuteScripts_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_ExecuteScripts_enum_x86">Allow Remote Script Execution:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_RemoteTerminal_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_RemoteTerminal_enum_x86">Allow Remote Terminal:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_SessionInsightsLogging_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Server_SessionInsightsLogging_enum_x86">Allow Session Insights Logging:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_UploadToFileBox_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_UploadToFileBox_enum_x86">Allow Upload to File Box:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AllowVPN_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Server_AllowVPN_enum_x86">Allow VPN Connections:</dropdownList>
+      </presentation>
+      <presentation id="AC_Server_AccessControlType_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Server_AccessControlType_enum_x86">Incoming Access Control Mode:</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_FileTransfer_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Client_FileTransfer_enum_x86">Allow File Transfer (Outgoing):</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_RemoteControl_enum_x86">
+        <dropdownList defaultItem="1" refId="AC_Client_RemoteControl_enum_x86">Allow Remote Control (Outgoing):</dropdownList>
+      </presentation>
+      <presentation id="AC_Client_AccessControlType_enum_x86">
+        <dropdownList defaultItem="0" refId="AC_Client_AccessControlType_enum_x86">Outgoing Access Control Mode:</dropdownList>
+      </presentation>
+      <presentation id="CustomRouter_text_x86">
+        <textBox refId="CustomRouter_text_x86">
+          <label>Custom router address:</label>
+        </textBox>
+      </presentation>
+      <presentation id="Proxy_Type_enum_x86">
+        <dropdownList defaultItem="0" refId="Proxy_Type_enum_x86">Proxy Mode:</dropdownList>
+      </presentation>
+      <presentation id="Proxy_IP_text_x86">
+        <textBox refId="Proxy_IP_text_x86">
+          <label>Proxy server address (host:port):</label>
+        </textBox>
+      </presentation>
+      <presentation id="Security_PasswordStrength_enum_x86">
+        <dropdownList defaultItem="2" refId="Security_PasswordStrength_enum_x86">Random Password Strength:</dropdownList>
+      </presentation>
+      <presentation id="ShowScamProtection_enum_x86">
+        <dropdownList defaultItem="2" refId="ShowScamProtection_enum_x86">Scam Protection Warning:</dropdownList>
+      </presentation>
+      <presentation id="Security_WinLogin_enum_x86">
+        <dropdownList defaultItem="0" refId="Security_WinLogin_enum_x86">Windows Logon Authentication:</dropdownList>
+      </presentation>
+      <presentation id="AutoUpdateMode_enum_x86">
+        <dropdownList defaultItem="3" refId="AutoUpdateMode_enum_x86">Auto-Update Mode:</dropdownList>
+      </presentation>
+      <presentation id="UpdateChannel_enum_x86">
+        <dropdownList defaultItem="0" refId="UpdateChannel_enum_x86">Update Channel:</dropdownList>
+      </presentation>
+      <presentation id="UpdateCheckInterval_enum_x86">
+        <dropdownList defaultItem="2" refId="UpdateCheckInterval_enum_x86">Update Check Interval:</dropdownList>
+      </presentation>
+      <presentation id="UpdateExpectedVersion_text_x86">
+        <textBox refId="UpdateExpectedVersion_text_x86">
+          <label>Pin to version (e.g. 15.58.4):</label>
+        </textBox>
+      </presentation>
+      <presentation id="Wol_Mode_enum_x86">
+        <dropdownList defaultItem="0" refId="Wol_Mode_enum_x86">Wake-on-LAN Mode:</dropdownList>
+      </presentation>
+      <presentation id="Wol_Port_decimal_x86">
+        <decimalTextBox refId="Wol_Port_decimal_x86" defaultValue="0">Port number:</decimalTextBox>
+      </presentation>
+      <presentation id="Wol_IP_text_x86">
+        <textBox refId="Wol_IP_text_x86">
+          <label>Public address (IP or hostname):</label>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

@@ -1,0 +1,962 @@
+[
+    {
+        "PolicyName":  "AC_Server_ControlRemoteTV_x64",
+        "ValueName":  "AC_Server_Custom_ControlRemoteTV",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_DownloadFromFileBox_x64",
+        "ValueName":  "AC_Server_Custom_AllowMeToDownloadFromFileBox",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_FileTransfer_x64",
+        "ValueName":  "AC_Server_Custom_FileTransferAccess",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_InSessionChat_x64",
+        "ValueName":  "AC_Server_Custom_AllowInSessionChat",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_ManageVirtualMonitors_x64",
+        "ValueName":  "AC_Server_Custom_AllowManageVirtualMonitors",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AllowPartnerViewDesktop_x64",
+        "ValueName":  "AC_Server_Custom_AllowPartnerViewDesktop",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PortForwarding_x64",
+        "ValueName":  "AC_Server_Custom_AllowPortForwarding",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PrintLocal_x64",
+        "ValueName":  "AC_Server_Custom_AllowToPrintOnMyPrinters",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PrintRemote_x64",
+        "ValueName":  "AC_Server_Custom_AllowToPrintOnRemotePrinters",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_RemoteControl_x64",
+        "ValueName":  "AC_Server_Custom_RemoteControlAccess",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_ExecuteScripts_x64",
+        "ValueName":  "AC_Server_Custom_AllowExecuteScripts",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_RemoteTerminal_x64",
+        "ValueName":  "AC_Server_Custom_AllowRemoteTerminal",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_SessionInsightsLogging_x64",
+        "ValueName":  "AC_Server_Custom_AllowSessionInsightsLogging",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_UploadToFileBox_x64",
+        "ValueName":  "AC_Server_Custom_AllowMeToUploadToFileBox",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AllowVPN_x64",
+        "ValueName":  "AC_Server_Custom_AllowVPN",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_DisableRemoteInput_x64",
+        "ValueName":  "AC_Server_Custom_DisableRemoteImput",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AccessControlType_x64",
+        "ValueName":  "AC_Server_AccessControlType",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_FileTransfer_x64",
+        "ValueName":  "AC_Client_Custom_FileTransferAccess",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_AllowOutgoingConnections_x64",
+        "ValueName":  "AC_AllowOutgoingConnections",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_RemoteControl_x64",
+        "ValueName":  "AC_Client_Custom_RemoteControlAccess",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_AccessControlType_x64",
+        "ValueName":  "AC_Client_AccessControlType",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "ChatToThisMachine_x64",
+        "ValueName":  "ChatToThisMachine",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Apply_Blacklist_Or_Whitelist_On_Meeting_x64",
+        "ValueName":  "Apply_Blacklist_Or_Whitelist_On_Meeting",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UseWhitelist_x64",
+        "ValueName":  "UseWhitelist",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ACFullAccessOnLoginScreen_x64",
+        "ValueName":  "ACFullAccessOnLoginScreen",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "HideOnlineStateOfTV_x64",
+        "ValueName":  "HideOnlineStateOfTV",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Logging_x64",
+        "ValueName":  "Logging",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LogIncomingConnections_x64",
+        "ValueName":  "LogIncomingConnections",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LogOutgoingConnections_x64",
+        "ValueName":  "LogOutgoingConnections",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_ActivateDirectIn_x64",
+        "ValueName":  "Security_ActivateDirectIn",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Always_Online_x64",
+        "ValueName":  "Always_Online",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "CustomRouter_x64",
+        "ValueName":  "CustomRouter",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Text",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ListenHttp_x64",
+        "ValueName":  "ListenHttp",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "General_DirectLAN_x64",
+        "ValueName":  "General_DirectLAN",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UPNP_x64",
+        "ValueName":  "UPNP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Proxy_Type_x64",
+        "ValueName":  "Proxy_Type",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Proxy_IP_x64",
+        "ValueName":  "Proxy_IP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Text",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LanOnly_x64",
+        "ValueName":  "LanOnly",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "useUDP_x64",
+        "ValueName":  "useUDP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_AcceptIncoming_x64",
+        "ValueName":  "Security_AcceptIncoming",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Local_BlackScreen_x64",
+        "ValueName":  "Local_BlackScreen",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Local_DisableInput_x64",
+        "ValueName":  "Local_DisableInput",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_Disableshutdown_x64",
+        "ValueName":  "Security_Disableshutdown",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "DisableTFAForConnections_x64",
+        "ValueName":  "DisableTFAForConnections",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_PasswordStrength_x64",
+        "ValueName":  "Security_PasswordStrength",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_Adminrights_x64",
+        "ValueName":  "Security_Adminrights",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ShowScamProtection_x64",
+        "ValueName":  "ShowScamProtection",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_WinLogin_x64",
+        "ValueName":  "Security_WinLogin",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "DeactivateSessionRecordingPauseStop_x64",
+        "ValueName":  "DeactivateSessionRecordingPauseStop",
+        "Category":  "Session Recording",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "AutorecordRemoteControlEnforced_x64",
+        "ValueName":  "AutorecordRemoteControlEnforced",
+        "Category":  "Session Recording",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "AutoUpdateMode_x64",
+        "ValueName":  "AutoUpdateMode",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "IsPreviewVersion_x64",
+        "ValueName":  "IsPreviewVersion",
+        "Category":  "Update Control",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ReceiveInsiderBuild_x64",
+        "ValueName":  "ReceiveInsiderBuild",
+        "Category":  "Update Control",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateChannel_x64",
+        "ValueName":  "UpdateChannel",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateCheckInterval_x64",
+        "ValueName":  "UpdateCheckInterval",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateExpectedVersion_x64",
+        "ValueName":  "UpdateExpectedVersion",
+        "Category":  "Update Control",
+        "ControlType":  "Text",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_ForceUpdate_x64",
+        "ValueName":  "Wol_ForceUpdate",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Toggle",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_Mode_x64",
+        "ValueName":  "Wol_Mode",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Enum",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_Port_x64",
+        "ValueName":  "Wol_Port",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Numeric",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_IP_x64",
+        "ValueName":  "Wol_IP",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Text",
+        "Architecture":  "x64",
+        "RegPath":  "SOFTWARE\\TeamViewer"
+    },
+    {
+        "PolicyName":  "AC_Server_ControlRemoteTV_x86",
+        "ValueName":  "AC_Server_Custom_ControlRemoteTV",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_DownloadFromFileBox_x86",
+        "ValueName":  "AC_Server_Custom_AllowMeToDownloadFromFileBox",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_FileTransfer_x86",
+        "ValueName":  "AC_Server_Custom_FileTransferAccess",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_InSessionChat_x86",
+        "ValueName":  "AC_Server_Custom_AllowInSessionChat",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_ManageVirtualMonitors_x86",
+        "ValueName":  "AC_Server_Custom_AllowManageVirtualMonitors",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AllowPartnerViewDesktop_x86",
+        "ValueName":  "AC_Server_Custom_AllowPartnerViewDesktop",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PortForwarding_x86",
+        "ValueName":  "AC_Server_Custom_AllowPortForwarding",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PrintLocal_x86",
+        "ValueName":  "AC_Server_Custom_AllowToPrintOnMyPrinters",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_PrintRemote_x86",
+        "ValueName":  "AC_Server_Custom_AllowToPrintOnRemotePrinters",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_RemoteControl_x86",
+        "ValueName":  "AC_Server_Custom_RemoteControlAccess",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_ExecuteScripts_x86",
+        "ValueName":  "AC_Server_Custom_AllowExecuteScripts",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_RemoteTerminal_x86",
+        "ValueName":  "AC_Server_Custom_AllowRemoteTerminal",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_SessionInsightsLogging_x86",
+        "ValueName":  "AC_Server_Custom_AllowSessionInsightsLogging",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_UploadToFileBox_x86",
+        "ValueName":  "AC_Server_Custom_AllowMeToUploadToFileBox",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AllowVPN_x86",
+        "ValueName":  "AC_Server_Custom_AllowVPN",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_DisableRemoteInput_x86",
+        "ValueName":  "AC_Server_Custom_DisableRemoteImput",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Server_AccessControlType_x86",
+        "ValueName":  "AC_Server_AccessControlType",
+        "Category":  "Access Control (Incoming)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_FileTransfer_x86",
+        "ValueName":  "AC_Client_Custom_FileTransferAccess",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_AllowOutgoingConnections_x86",
+        "ValueName":  "AC_AllowOutgoingConnections",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_RemoteControl_x86",
+        "ValueName":  "AC_Client_Custom_RemoteControlAccess",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "AC_Client_AccessControlType_x86",
+        "ValueName":  "AC_Client_AccessControlType",
+        "Category":  "Access Control (Outgoing)",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer\\AccessControl"
+    },
+    {
+        "PolicyName":  "ChatToThisMachine_x86",
+        "ValueName":  "ChatToThisMachine",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Apply_Blacklist_Or_Whitelist_On_Meeting_x86",
+        "ValueName":  "Apply_Blacklist_Or_Whitelist_On_Meeting",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UseWhitelist_x86",
+        "ValueName":  "UseWhitelist",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ACFullAccessOnLoginScreen_x86",
+        "ValueName":  "ACFullAccessOnLoginScreen",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "HideOnlineStateOfTV_x86",
+        "ValueName":  "HideOnlineStateOfTV",
+        "Category":  "Features",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Logging_x86",
+        "ValueName":  "Logging",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LogIncomingConnections_x86",
+        "ValueName":  "LogIncomingConnections",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LogOutgoingConnections_x86",
+        "ValueName":  "LogOutgoingConnections",
+        "Category":  "Logging",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_ActivateDirectIn_x86",
+        "ValueName":  "Security_ActivateDirectIn",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Always_Online_x86",
+        "ValueName":  "Always_Online",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "CustomRouter_x86",
+        "ValueName":  "CustomRouter",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Text",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ListenHttp_x86",
+        "ValueName":  "ListenHttp",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "General_DirectLAN_x86",
+        "ValueName":  "General_DirectLAN",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UPNP_x86",
+        "ValueName":  "UPNP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Proxy_Type_x86",
+        "ValueName":  "Proxy_Type",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Proxy_IP_x86",
+        "ValueName":  "Proxy_IP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Text",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "LanOnly_x86",
+        "ValueName":  "LanOnly",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "useUDP_x86",
+        "ValueName":  "useUDP",
+        "Category":  "Network and Proxy",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_AcceptIncoming_x86",
+        "ValueName":  "Security_AcceptIncoming",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Local_BlackScreen_x86",
+        "ValueName":  "Local_BlackScreen",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Local_DisableInput_x86",
+        "ValueName":  "Local_DisableInput",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_Disableshutdown_x86",
+        "ValueName":  "Security_Disableshutdown",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "DisableTFAForConnections_x86",
+        "ValueName":  "DisableTFAForConnections",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_PasswordStrength_x86",
+        "ValueName":  "Security_PasswordStrength",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_Adminrights_x86",
+        "ValueName":  "Security_Adminrights",
+        "Category":  "Security",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ShowScamProtection_x86",
+        "ValueName":  "ShowScamProtection",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Security_WinLogin_x86",
+        "ValueName":  "Security_WinLogin",
+        "Category":  "Security",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "DeactivateSessionRecordingPauseStop_x86",
+        "ValueName":  "DeactivateSessionRecordingPauseStop",
+        "Category":  "Session Recording",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "AutorecordRemoteControlEnforced_x86",
+        "ValueName":  "AutorecordRemoteControlEnforced",
+        "Category":  "Session Recording",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "AutoUpdateMode_x86",
+        "ValueName":  "AutoUpdateMode",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "IsPreviewVersion_x86",
+        "ValueName":  "IsPreviewVersion",
+        "Category":  "Update Control",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "ReceiveInsiderBuild_x86",
+        "ValueName":  "ReceiveInsiderBuild",
+        "Category":  "Update Control",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateChannel_x86",
+        "ValueName":  "UpdateChannel",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateCheckInterval_x86",
+        "ValueName":  "UpdateCheckInterval",
+        "Category":  "Update Control",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "UpdateExpectedVersion_x86",
+        "ValueName":  "UpdateExpectedVersion",
+        "Category":  "Update Control",
+        "ControlType":  "Text",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_ForceUpdate_x86",
+        "ValueName":  "Wol_ForceUpdate",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Toggle",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_Mode_x86",
+        "ValueName":  "Wol_Mode",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Enum",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_Port_x86",
+        "ValueName":  "Wol_Port",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Numeric",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    },
+    {
+        "PolicyName":  "Wol_IP_x86",
+        "ValueName":  "Wol_IP",
+        "Category":  "Wake-on-LAN",
+        "ControlType":  "Text",
+        "Architecture":  "x86",
+        "RegPath":  "SOFTWARE\\WOW6432Node\\TeamViewer"
+    }
+]
