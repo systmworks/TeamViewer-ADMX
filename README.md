@@ -2,6 +2,11 @@
 
 > I have spent many, many hours creating and testing this ADMX. If it helps you please consider buying me a Coffee :)
 
+> [!TIP]
+> **Coming soon: ADMX Pro.** Ready-to-import Intune & GPO profiles (Security Hardened · STIG-aligned · No Nags & Upsells),
+> re-tested against every vendor release, plus an email alert when a vendor changes or breaks a setting.
+> **[Join the waitlist →](https://tally.so/r/7RGrVR)** (free, no spam, one email when it launches)
+
 # TeamViewer Host - Custom ADMX Template
 
 | ![Quick Links](https://img.shields.io/badge/Quick%20Links-316dca?style=flat-square) | ![Description](https://img.shields.io/badge/Description-316dca?style=flat-square) |
